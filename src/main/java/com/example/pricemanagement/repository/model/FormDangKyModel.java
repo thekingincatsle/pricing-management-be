@@ -20,6 +20,8 @@ public class FormDangKyModel {
     private String maFormDangKy;
     private String anhMinhChung;
     private String giaiThuong;
+
+    private String danhHieu;
     private String trangThai;
     private String maGiayKhaiSinh;
     private String email;
@@ -42,6 +44,16 @@ public class FormDangKyModel {
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
         this.maGiayKhaiSinh = maGiayKhaiSinh;
+    }
+
+    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, String maGiayKhaiSinh, String email) {
+        this.maFormDangKy = maFormDangKy;
+        this.anhMinhChung = anhMinhChung;
+        this.giaiThuong = giaiThuong;
+        this.danhHieu = danhHieu;
+        this.trangThai = trangThai;
+        this.maGiayKhaiSinh = maGiayKhaiSinh;
+        this.email = email;
     }
 
     public Long getId() {
@@ -70,6 +82,14 @@ public class FormDangKyModel {
 
     public void setGiaiThuong(String giaiThuong) {
         this.giaiThuong = giaiThuong;
+    }
+
+    public String getDanhHieu() {
+        return danhHieu;
+    }
+
+    public void setDanhHieu(String danhHieu) {
+        this.danhHieu = danhHieu;
     }
 
     public String getTrangThai() {
