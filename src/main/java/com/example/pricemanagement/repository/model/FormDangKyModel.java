@@ -15,9 +15,7 @@ public class FormDangKyModel {
             strategy = GenerationType.SEQUENCE,
             generator = "formdangky_sequence"
     )
-
-    private Long id;
-    private String maFormDangKy;
+    private Long maFormDangKy;
     private String anhMinhChung;
     private String giaiThuong;
     private String trangThai;
@@ -27,8 +25,7 @@ public class FormDangKyModel {
     public FormDangKyModel() {
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
@@ -36,23 +33,18 @@ public class FormDangKyModel {
         this.email = email;
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
         this.maGiayKhaiSinh = maGiayKhaiSinh;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getMaFormDangKy() {
+    public Long getMaFormDangKy() {
         return maFormDangKy;
     }
 
-    public void setMaFormDangKy(String maFormDangKy) {
+    public void setMaFormDangKy(Long maFormDangKy) {
         this.maFormDangKy = maFormDangKy;
     }
 

@@ -6,17 +6,6 @@ import javax.persistence.*;
 @Table(name = "CANBO")
 public class CanBoModel {
     @Id
-    @SequenceGenerator(
-            name = "canbo_sequence",
-            sequenceName = "canbo_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "canbo_sequence"
-    )
-
-    private Long id;
     private String email;
     private String ten;
     private String password;
@@ -28,10 +17,6 @@ public class CanBoModel {
         this.email = email;
         this.ten = ten;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getEmail() {
