@@ -6,34 +6,21 @@ import javax.persistence.*;
 @Table(name = "THANHVIEN")
 public class ThanhVienModel {
     @Id
-    @SequenceGenerator(
-            name = "thanhvien_sequence",
-            sequenceName = "thanhvien_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "thanhvien_sequence"
-    )
-
-    private Long id;
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
-    private String idSoHokhau;
+    @ManyToOne
+    @JoinColumn(name = "hogiadinh_idSoHoKhau")
+    private HoGiaDinhModel hoGiaDinh;
 
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHokhau) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, HoGiaDinhModel hoGiaDinh) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
         this.namSinh = namSinh;
-        this.idSoHokhau = idSoHokhau;
-    }
-
-    public Long getId() {
-        return id;
+        this.hoGiaDinh = hoGiaDinh;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -60,11 +47,11 @@ public class ThanhVienModel {
         this.namSinh = namSinh;
     }
 
-    public String getIdSoHokhau() {
-        return idSoHokhau;
+    public HoGiaDinhModel getHoGiaDinh() {
+        return hoGiaDinh;
     }
 
-    public void setIdSoHokhau(String idSoHokhau) {
-        this.idSoHokhau = idSoHokhau;
+    public void setHoGiaDinh(HoGiaDinhModel hoGiaDinh) {
+        this.hoGiaDinh = hoGiaDinh;
     }
 }
