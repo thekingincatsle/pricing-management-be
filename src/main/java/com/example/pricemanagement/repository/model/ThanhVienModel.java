@@ -9,16 +9,16 @@ public class ThanhVienModel {
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
-    private String idSoHokhau;
+    private String idSoHoKhau;
 
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHokhau) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHoKhau) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
         this.namSinh = namSinh;
-        this.idSoHokhau = idSoHokhau;
+        this.idSoHoKhau = idSoHoKhau;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -45,11 +45,11 @@ public class ThanhVienModel {
         this.namSinh = namSinh;
     }
 
-    public String getIdSoHokhau() {
-        return idSoHokhau;
+    public String getIdSoHoKhau() {
+        return idSoHoKhau;
     }
 
     public void setIdSoHokhau(String idSoHokhau) {
-        this.idSoHokhau = idSoHokhau;
+        this.idSoHoKhau = idSoHoKhau;
     }
 }
