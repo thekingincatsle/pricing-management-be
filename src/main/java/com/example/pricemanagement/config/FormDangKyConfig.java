@@ -15,8 +15,8 @@ public class FormDangKyConfig {
     @Bean(name = "FORMDANGKY")
     CommandLineRunner commandLineRunner(FormDangKyBaseRepository formDangKyBaseRepository){
         return args -> {
-            FormDangKyModel formDangKyModel1 = new FormDangKyModel("f1234", "url1", "NhatThanhPho", FormTrangThaiEnum.DANGCHO.trangThai(), "tv1234");
-            FormDangKyModel formDangKyModel2 = new FormDangKyModel("f1235", "url2", "NhatQuocGia", FormTrangThaiEnum.DANGCHO.trangThai(), "tv1234");
+            FormDangKyModel formDangKyModel1 = new FormDangKyModel("url1", "NhatThanhPho", FormTrangThaiEnum.DANGCHO.trangThai(), "tv1234");
+            FormDangKyModel formDangKyModel2 = new FormDangKyModel("url2", "NhatQuocGia", FormTrangThaiEnum.DANGCHO.trangThai(), "tv1234");
 
             formDangKyBaseRepository.saveAll(List.of(formDangKyModel1, formDangKyModel2));
         };

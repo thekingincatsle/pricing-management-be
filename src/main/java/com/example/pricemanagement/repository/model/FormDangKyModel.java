@@ -17,7 +17,6 @@ public class FormDangKyModel {
     )
 
     private Long id;
-    private String maFormDangKy;
     private String anhMinhChung;
     private String giaiThuong;
 
@@ -29,8 +28,7 @@ public class FormDangKyModel {
     public FormDangKyModel() {
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
@@ -38,16 +36,14 @@ public class FormDangKyModel {
         this.email = email;
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
         this.maGiayKhaiSinh = maGiayKhaiSinh;
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, String maGiayKhaiSinh, String email) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, String maGiayKhaiSinh, String email) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
@@ -58,14 +54,6 @@ public class FormDangKyModel {
 
     public Long getId() {
         return id;
-    }
-
-    public String getMaFormDangKy() {
-        return maFormDangKy;
-    }
-
-    public void setMaFormDangKy(String maFormDangKy) {
-        this.maFormDangKy = maFormDangKy;
     }
 
     public String getAnhMinhChung() {

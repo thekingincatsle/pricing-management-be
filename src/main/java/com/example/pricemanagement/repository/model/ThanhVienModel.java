@@ -6,17 +6,6 @@ import javax.persistence.*;
 @Table(name = "THANHVIEN")
 public class ThanhVienModel {
     @Id
-    @SequenceGenerator(
-            name = "thanhvien_sequence",
-            sequenceName = "thanhvien_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "thanhvien_sequence"
-    )
-
-    private Long id;
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
@@ -30,10 +19,6 @@ public class ThanhVienModel {
         this.ten = ten;
         this.namSinh = namSinh;
         this.idSoHokhau = idSoHokhau;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getMaGiayKhaiSinh() {

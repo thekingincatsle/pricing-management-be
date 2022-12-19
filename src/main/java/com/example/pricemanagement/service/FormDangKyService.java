@@ -23,15 +23,13 @@ public class FormDangKyService {
     public FormDangKyModel getFormDangKyById(Long id) {
         Optional<FormDangKyModel> response = formDangKyRepository.getFormDangKyById(id);
         FormDangKyModel model = response.get();
-        return new FormDangKyModel(model.getMaFormDangKy(), model.getAnhMinhChung(), model.getGiaiThuong(),
-                model.getDanhHieu(), model.getTrangThai(), model.getMaGiayKhaiSinh(), model.getEmail());
+        return model;
     }
 
 
     public FormDangKyModel addFormDangKy(FormDangKyModel formDangKyModel) {
         formDangKyRepository.addFormDangKy(formDangKyModel);
-        return new FormDangKyModel(formDangKyModel.getMaFormDangKy(), formDangKyModel.getAnhMinhChung(), formDangKyModel.getGiaiThuong(),
-                formDangKyModel.getDanhHieu(), formDangKyModel.getTrangThai(), formDangKyModel.getMaGiayKhaiSinh(), formDangKyModel.getEmail());
+        return formDangKyModel;
     }
 
     public FormDangKyModel updateFormDangKy(Long id, FormDangKyModel formDangKyModel) {
@@ -40,8 +38,6 @@ public class FormDangKyService {
         model.setEmail(formDangKyModel.getEmail());
         model.setDanhHieu(formDangKyModel.getDanhHieu());
         formDangKyRepository.updateFormDangKy(model);
-        return  new FormDangKyModel(model.getMaFormDangKy(), model.getAnhMinhChung(), model.getGiaiThuong(),
-                model.getDanhHieu(), model.getTrangThai(), model.getMaGiayKhaiSinh(), model.getEmail());
-
+        return model;
     }
 }

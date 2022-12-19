@@ -6,17 +6,6 @@ import javax.persistence.*;
 @Table(name = "HOGIADINH")
 public class HoGiaDinhModel {
     @Id
-    @SequenceGenerator(
-            name = "hogiadinh_sequence",
-            sequenceName = "dat_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "hogiadinh_sequence"
-    )
-
-    private Long id;
     private String idSoHoKhau;
     private String password;
     private String tenChuHo;
@@ -28,14 +17,6 @@ public class HoGiaDinhModel {
         this.idSoHoKhau = idSoHoKhau;
         this.password = password;
         this.tenChuHo = tenChuHo;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getIdSoHoKhau() {
