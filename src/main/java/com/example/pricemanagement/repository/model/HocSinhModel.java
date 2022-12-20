@@ -1,6 +1,7 @@
 package com.example.pricemanagement.repository.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "HOCSINH")
@@ -9,6 +10,8 @@ public class HocSinhModel {
     private String maGiayKhaiSinh;
     private String truong;
     private String lop;
+    @OneToMany(mappedBy = "hocSinh")
+    private Set<FormDangKyModel> formDangKyModels;
 
     public HocSinhModel() {
     }

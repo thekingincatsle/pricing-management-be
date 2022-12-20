@@ -40,4 +40,12 @@ public class FormDangKyService {
         formDangKyRepository.updateFormDangKy(model);
         return model;
     }
+
+    public List<FormDangKyModel> getFormWithStudent(){
+        return this.formDangKyRepository.getFormWithStudent();
+    }
+
+    public List<FormDangKyModel> getAcceptedForm(){
+        return this.formDangKyRepository.getAcceptedForm();
+    }
 }

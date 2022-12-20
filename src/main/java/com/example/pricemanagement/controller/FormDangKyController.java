@@ -37,4 +37,14 @@ public class FormDangKyController {
     public FormDangKyModel updateFormDangKy(@RequestParam(value = "id") Long id, @RequestBody FormDangKyModel formDangKyModel) {
         return this.formDangKyService.updateFormDangKy(id,formDangKyModel);
     }
+
+    @GetMapping("/get-form-with-student")
+    public List<FormDangKyModel> getFormWithStudent(){
+        return this.formDangKyService.getFormWithStudent();
+    }
+
+    @GetMapping("/get-accepted-form")
+    public List<FormDangKyModel> getAcceptedForm(){
+        return this.formDangKyService.getAcceptedForm();
+    }
 }

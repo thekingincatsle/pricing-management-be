@@ -22,33 +22,36 @@ public class FormDangKyModel {
 
     private String danhHieu;
     private String trangThai;
-    private String maGiayKhaiSinh;
+    @ManyToOne
+    @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
+    private HocSinhModel hocSinh;
     private String email;
+
 
     public FormDangKyModel() {
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
-        this.email = email;
+        this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
-        this.anhMinhChung = anhMinhChung;
-        this.giaiThuong = giaiThuong;
-        this.trangThai = trangThai;
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
-    }
-
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, String maGiayKhaiSinh, String email) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
         this.trangThai = trangThai;
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
+        this.hocSinh = hocSinh;
+    }
+
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, String email) {
+        this.anhMinhChung = anhMinhChung;
+        this.giaiThuong = giaiThuong;
+        this.danhHieu = danhHieu;
+        this.trangThai = trangThai;
+        this.hocSinh = hocSinh;
         this.email = email;
     }
 
@@ -88,12 +91,12 @@ public class FormDangKyModel {
         this.trangThai = trangThai;
     }
 
-    public String getMaGiayKhaiSinh() {
-        return maGiayKhaiSinh;
+    public HocSinhModel getHocSinh() {
+        return hocSinh;
     }
 
-    public void setMaGiayKhaiSinh(String maGiayKhaiSinh) {
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
+    public void setHocSinh(HocSinhModel hocSinh) {
+        this.hocSinh = hocSinh;
     }
 
     public String getEmail() {
