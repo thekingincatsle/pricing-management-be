@@ -17,43 +17,46 @@ public class FormDangKyModel {
     )
 
     private Long id;
-    private String maFormDangKy;
     private String anhMinhChung;
     private String giaiThuong;
+
+    private String danhHieu;
     private String trangThai;
-    private String maGiayKhaiSinh;
+    @ManyToOne
+    @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
+    private HocSinhModel hocSinh;
     private String email;
+
 
     public FormDangKyModel() {
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh, String email) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.trangThai = trangThai;
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
-        this.email = email;
+        this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String maFormDangKy, String anhMinhChung, String giaiThuong, String trangThai, String maGiayKhaiSinh) {
-        this.maFormDangKy = maFormDangKy;
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
+        this.danhHieu = danhHieu;
         this.trangThai = trangThai;
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
+        this.hocSinh = hocSinh;
+    }
+
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, String email) {
+        this.anhMinhChung = anhMinhChung;
+        this.giaiThuong = giaiThuong;
+        this.danhHieu = danhHieu;
+        this.trangThai = trangThai;
+        this.hocSinh = hocSinh;
+        this.email = email;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public String getMaFormDangKy() {
-        return maFormDangKy;
-    }
-
-    public void setMaFormDangKy(String maFormDangKy) {
-        this.maFormDangKy = maFormDangKy;
     }
 
     public String getAnhMinhChung() {
@@ -72,6 +75,14 @@ public class FormDangKyModel {
         this.giaiThuong = giaiThuong;
     }
 
+    public String getDanhHieu() {
+        return danhHieu;
+    }
+
+    public void setDanhHieu(String danhHieu) {
+        this.danhHieu = danhHieu;
+    }
+
     public String getTrangThai() {
         return trangThai;
     }
@@ -80,12 +91,12 @@ public class FormDangKyModel {
         this.trangThai = trangThai;
     }
 
-    public String getMaGiayKhaiSinh() {
-        return maGiayKhaiSinh;
+    public HocSinhModel getHocSinh() {
+        return hocSinh;
     }
 
-    public void setMaGiayKhaiSinh(String maGiayKhaiSinh) {
-        this.maGiayKhaiSinh = maGiayKhaiSinh;
+    public void setHocSinh(HocSinhModel hocSinh) {
+        this.hocSinh = hocSinh;
     }
 
     public String getEmail() {

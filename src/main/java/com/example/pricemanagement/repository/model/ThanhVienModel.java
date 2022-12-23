@@ -6,34 +6,19 @@ import javax.persistence.*;
 @Table(name = "THANHVIEN")
 public class ThanhVienModel {
     @Id
-    @SequenceGenerator(
-            name = "thanhvien_sequence",
-            sequenceName = "thanhvien_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "thanhvien_sequence"
-    )
-
-    private Long id;
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
-    private String idSoHokhau;
+    private String idSoHoKhau;
 
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHokhau) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHoKhau) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
         this.namSinh = namSinh;
-        this.idSoHokhau = idSoHokhau;
-    }
-
-    public Long getId() {
-        return id;
+        this.idSoHoKhau = idSoHoKhau;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -60,11 +45,11 @@ public class ThanhVienModel {
         this.namSinh = namSinh;
     }
 
-    public String getIdSoHokhau() {
-        return idSoHokhau;
+    public String getIdSoHoKhau() {
+        return idSoHoKhau;
     }
 
     public void setIdSoHokhau(String idSoHokhau) {
-        this.idSoHokhau = idSoHokhau;
+        this.idSoHoKhau = idSoHoKhau;
     }
 }
