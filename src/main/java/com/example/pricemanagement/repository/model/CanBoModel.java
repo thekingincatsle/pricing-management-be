@@ -1,6 +1,7 @@
 package com.example.pricemanagement.repository.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "CANBO")
@@ -9,6 +10,8 @@ public class CanBoModel {
     private String email;
     private String ten;
     private String password;
+    @OneToMany(mappedBy = "canBo")
+    private Set<FormDangKyModel> formDangKyModels;
 
     public CanBoModel() {
     }

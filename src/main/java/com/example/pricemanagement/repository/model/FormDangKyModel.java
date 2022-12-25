@@ -25,7 +25,9 @@ public class FormDangKyModel {
     @ManyToOne
     @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
     private HocSinhModel hocSinh;
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "email")
+    private CanBoModel canBo;
 
 
     public FormDangKyModel() {
@@ -46,13 +48,13 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, String email) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
         this.trangThai = trangThai;
         this.hocSinh = hocSinh;
-        this.email = email;
+        this.canBo = canBo;
     }
 
     public Long getId() {
@@ -100,10 +102,19 @@ public class FormDangKyModel {
     }
 
     public String getEmail() {
-        return email;
+        return canBo.getEmail();
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.canBo.setEmail(email);
     }
+
+    public CanBoModel getCanBo() {
+        return canBo;
+    }
+
+    public void setCanBo(CanBoModel canBo) {
+        this.canBo = canBo;
+    }
+
 }

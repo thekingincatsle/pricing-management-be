@@ -1,24 +1,31 @@
 package com.example.pricemanagement.repository.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "THANHVIEN")
-public class ThanhVienModel {
+@Embeddable
+public class ThanhVienModel implements Serializable {
     @Id
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
-    private String idSoHoKhau;
+    @ManyToOne
+    @JoinColumn(name = "idSoHoKhau", nullable = false)
+    private HoGiaDinhModel hoGiaDinh;
+    @OneToOne(mappedBy = "thanhVien", cascade = CascadeType.ALL)
+    private HocSinhModel hocSinh;
 
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHoKhau) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, HoGiaDinhModel hoGiaDinh) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
         this.namSinh = namSinh;
-        this.idSoHoKhau = idSoHoKhau;
+        this.hoGiaDinh = hoGiaDinh;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -45,11 +52,11 @@ public class ThanhVienModel {
         this.namSinh = namSinh;
     }
 
-    public String getIdSoHoKhau() {
-        return idSoHoKhau;
+    public HoGiaDinhModel getHoGiaDinh() {
+        return hoGiaDinh;
     }
 
-    public void setIdSoHokhau(String idSoHokhau) {
-        this.idSoHoKhau = idSoHoKhau;
+    public void setHoGiaDinh(HoGiaDinhModel hoGiaDinh) {
+        this.hoGiaDinh = hoGiaDinh;
     }
 }

@@ -16,6 +16,10 @@ public class HocSinhRepository {
     }
 
     public List<HocSinhModel> getHocSinh() {
-        return this.hocSinhBaseRepository.findAll();
+        return this.hocSinhBaseRepository.getHocSinh();
+    }
+
+    public List<HocSinhModel> getHocSinhByGKS(String id) {
+        return this.hocSinhBaseRepository.getHocSinhByGKS(id);
     }
 }
