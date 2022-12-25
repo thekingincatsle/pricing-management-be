@@ -6,13 +6,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "HOCSINH")
-public class HocSinhModel implements Serializable {
+public class HocSinhModel{
 
     @Id
     private String maGiayKhaiSinh;
+
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
+    @PrimaryKeyJoinColumn(name="ma_giay_khai_sinh", referencedColumnName="ma_giay_khai_sinh")
     private ThanhVienModel thanhVien;
     private String truong;
     private String lop;
@@ -23,7 +23,7 @@ public class HocSinhModel implements Serializable {
     public HocSinhModel() {
     }
 
-    public HocSinhModel(ThanhVienModel thanhVien, String truong, String lop) {
+    public HocSinhModel( ThanhVienModel thanhVien, String truong, String lop) {
         this.thanhVien = thanhVien;
         this.truong = truong;
         this.lop = lop;
