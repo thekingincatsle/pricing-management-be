@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "HOCSINH")
-public class HocSinhModel {
+public class HocSinhModel{
 
     @Id
     private String maGiayKhaiSinh;
@@ -24,7 +24,7 @@ public class HocSinhModel {
     public HocSinhModel() {
     }
 
-    public HocSinhModel(ThanhVienModel thanhVien, String truong, String lop) {
+    public HocSinhModel( ThanhVienModel thanhVien, String truong, String lop) {
         this.thanhVien = thanhVien;
         this.truong = truong;
         this.lop = lop;
