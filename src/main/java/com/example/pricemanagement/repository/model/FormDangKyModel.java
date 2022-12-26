@@ -22,12 +22,12 @@ public class FormDangKyModel {
 
     private String danhHieu;
     private String trangThai;
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
     private HocSinhModel hocSinh;
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "email")
-    private CanBoModel canBo;
+    private CanBoModel canBo = new CanBoModel();
 
 
     public FormDangKyModel() {
@@ -102,7 +102,12 @@ public class FormDangKyModel {
     }
 
     public String getEmail() {
-        return canBo.getEmail();
+        if(canBo!=null){
+            return canBo.getEmail();
+        }
+        else{
+            return null;
+        }
     }
 
     public void setEmail(String email) {

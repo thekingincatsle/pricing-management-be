@@ -5,6 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "CANBO")
+
 public class CanBoModel {
     @Id
     private String email;

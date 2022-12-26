@@ -1,18 +1,19 @@
 package com.example.pricemanagement.repository.model;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "HOCSINH")
-public class HocSinhModel implements Serializable {
+public class HocSinhModel {
 
     @Id
     private String maGiayKhaiSinh;
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
+
+    @OneToOne()
+    @PrimaryKeyJoinColumn(name="ma_giay_khai_sinh", referencedColumnName="ma_giay_khai_sinh")
     private ThanhVienModel thanhVien;
     private String truong;
     private String lop;

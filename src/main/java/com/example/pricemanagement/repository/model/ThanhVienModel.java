@@ -6,16 +6,18 @@ import java.util.Set;
 
 @Entity
 @Table(name = "THANHVIEN")
-@Embeddable
-public class ThanhVienModel implements Serializable {
+public class ThanhVienModel{
     @Id
+    @Column(name = "ma_giay_khai_sinh")
     private String maGiayKhaiSinh;
     private String ten;
     private int namSinh;
-    @ManyToOne
-    @JoinColumn(name = "idSoHoKhau", nullable = false)
+
+    @ManyToOne()
+    @JoinColumn(name = "id_so_ho_khau", nullable = false)
     private HoGiaDinhModel hoGiaDinh;
-    @OneToOne(mappedBy = "thanhVien", cascade = CascadeType.ALL)
+
+    @OneToOne(mappedBy = "thanhVien", fetch = FetchType.LAZY)
     private HocSinhModel hocSinh;
 
     public ThanhVienModel() {
