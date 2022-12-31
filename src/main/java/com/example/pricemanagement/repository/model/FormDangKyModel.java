@@ -20,7 +20,9 @@ public class FormDangKyModel {
     private String anhMinhChung;
     private String giaiThuong;
 
-    private String danhHieu;
+    @ManyToOne()
+    @JoinColumn(name = "idDanhHieu")
+    private DanhHieuModel danhHieu;
     private String trangThai;
     @ManyToOne()
     @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
@@ -28,6 +30,8 @@ public class FormDangKyModel {
     @ManyToOne()
     @JoinColumn(name = "email")
     private CanBoModel canBo = new CanBoModel();
+    @OneToOne(mappedBy = "formDangKy", fetch = FetchType.LAZY)
+    private XacNhanPhanThuongHocSinhModel xacNhanPhanThuongHocSinh;
 
 
     public FormDangKyModel() {
@@ -40,7 +44,7 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
@@ -48,7 +52,7 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
@@ -77,11 +81,11 @@ public class FormDangKyModel {
         this.giaiThuong = giaiThuong;
     }
 
-    public String getDanhHieu() {
+    public DanhHieuModel getDanhHieu() {
         return danhHieu;
     }
 
-    public void setDanhHieu(String danhHieu) {
+    public void setDanhHieu(DanhHieuModel danhHieu) {
         this.danhHieu = danhHieu;
     }
 
