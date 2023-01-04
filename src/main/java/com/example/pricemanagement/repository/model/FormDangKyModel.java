@@ -82,7 +82,12 @@ public class FormDangKyModel {
     }
 
     public DanhHieuModel getDanhHieu() {
-        return danhHieu;
+        if(danhHieu!=null){
+            return danhHieu;
+        }
+        else{
+            return null;
+        }
     }
 
     public void setDanhHieu(DanhHieuModel danhHieu) {
