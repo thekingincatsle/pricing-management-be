@@ -25,4 +25,9 @@ public class HocSinhController {
     public List<HocSinhModel> getHocSinhById(@RequestParam(value = "id") String id){
         return this.hocSinhService.getHocSinhById(id);
     }
+
+    @GetMapping("/get-by-id-shk")
+    public List<HocSinhModel> getHocSinhByIdshk(@RequestParam(value = "id_shk") String id){
+        return this.hocSinhService.getHocSinhByIdshk(id);
+    }
 }

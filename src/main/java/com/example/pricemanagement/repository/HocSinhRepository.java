@@ -22,4 +22,8 @@ public class HocSinhRepository {
     public List<HocSinhModel> getHocSinhByGKS(String id) {
         return this.hocSinhBaseRepository.getHocSinhByGKS(id);
     }
+
+    public List<HocSinhModel> getHocSinhByIdshk(String idSoHoKhau) {
+        return this.hocSinhBaseRepository.getHocSinhByIdshk(idSoHoKhau);
+    }
 }

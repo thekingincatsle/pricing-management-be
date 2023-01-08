@@ -25,4 +25,8 @@ public class HocSinhService {
     public List<HocSinhModel> getHocSinhById(String maGiayKhaiSinh){
         return this.hocSinhRepository.getHocSinhByGKS(maGiayKhaiSinh);
     }
+
+    public List<HocSinhModel> getHocSinhByIdshk(String idSoHoKhau){
+        return this.hocSinhRepository.getHocSinhByIdshk(idSoHoKhau);
+    }
 }

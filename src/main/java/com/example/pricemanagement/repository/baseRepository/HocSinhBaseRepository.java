@@ -13,4 +13,7 @@ public interface HocSinhBaseRepository extends JpaRepository<HocSinhModel, Long>
     List<HocSinhModel> getHocSinh();
     @Query(value = "SELECT * FROM hocsinh WHERE ma_giay_khai_sinh= :id", nativeQuery = true)
     List<HocSinhModel> getHocSinhByGKS(String id);
+
+    @Query(value = "SELECT * FROM hocsinh hs INNER JOIN thanhvien tv ON hs.ma_giay_khai_sinh = tv.ma_giay_khai_sinh WHERE tv.id_so_ho_khau= :id", nativeQuery = true)
+    List<HocSinhModel> getHocSinhByIdshk(String id);
 }
