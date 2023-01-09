@@ -4,6 +4,7 @@ import com.example.pricemanagement.repository.baseRepository.FormDangKyBaseRepos
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 @Repository
 public class FormDangKyRepository {
@@ -15,7 +16,7 @@ public class FormDangKyRepository {
 
 
     public List<FormDangKyModel> getFormDangKy() {
-        return formDangKyBaseRepository.findAll();
+        return formDangKyBaseRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
     public Optional<FormDangKyModel> getFormDangKyById(Long id) {
