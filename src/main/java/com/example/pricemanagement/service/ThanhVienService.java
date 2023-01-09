@@ -23,4 +23,8 @@ public class ThanhVienService {
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(String idSoHoKhau){
         return this.thanhVienRepository.getThanhVienByIdSoHoKhau(idSoHoKhau);
     }
+
+    public List<ThanhVienModel> getChildren(){
+        return thanhVienRepository.getChildren();
+    }
 }

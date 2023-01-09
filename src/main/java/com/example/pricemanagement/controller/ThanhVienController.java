@@ -25,4 +25,9 @@ public class ThanhVienController {
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(@RequestParam(value = "id_shk") String idSoHoKhau){
         return this.thanhVienService.getThanhVienByIdSoHoKhau(idSoHoKhau);
     }
+
+    @GetMapping("/get-children")
+    public List<ThanhVienModel> getChildren(){
+        return this.thanhVienService.getChildren();
+    }
 }

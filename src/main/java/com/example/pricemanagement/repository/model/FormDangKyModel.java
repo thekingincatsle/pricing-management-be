@@ -22,7 +22,7 @@ public class FormDangKyModel {
 
     @ManyToOne()
     @JoinColumn(name = "idDanhHieu")
-    private DanhHieuModel danhHieu;
+    private DanhHieuModel danhHieu = new DanhHieuModel();
     private String trangThai;
     @ManyToOne()
     @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
@@ -108,19 +108,6 @@ public class FormDangKyModel {
 
     public void setHocSinh(HocSinhModel hocSinh) {
         this.hocSinh = hocSinh;
-    }
-
-    public String getEmail() {
-        if(canBo!=null){
-            return canBo.getEmail();
-        }
-        else{
-            return null;
-        }
-    }
-
-    public void setEmail(String email) {
-        this.canBo.setEmail(email);
     }
 
     public CanBoModel getCanBo() {

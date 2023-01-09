@@ -11,6 +11,7 @@ public class ThanhVienModel{
     @Column(name = "ma_giay_khai_sinh")
     private String maGiayKhaiSinh;
     private String ten;
+    private String gioiTinh;
     private int namSinh;
 
     @ManyToOne()
@@ -23,11 +24,13 @@ public class ThanhVienModel{
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, HoGiaDinhModel hoGiaDinh) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, String gioiTinh, int namSinh, HoGiaDinhModel hoGiaDinh, HocSinhModel hocSinh) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
+        this.gioiTinh = gioiTinh;
         this.namSinh = namSinh;
         this.hoGiaDinh = hoGiaDinh;
+        this.hocSinh = hocSinh;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -44,6 +47,14 @@ public class ThanhVienModel{
 
     public void setTen(String ten) {
         this.ten = ten;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
 
     public int getNamSinh() {

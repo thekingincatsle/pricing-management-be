@@ -31,13 +31,13 @@ public class FormDangKyService {
         return formDangKyModel;
     }
 
-    public FormDangKyModel updateFormDangKy(Long id, FormDangKyModel formDangKyModel) {
-        FormDangKyModel model = getFormDangKyById(id);
+    public FormDangKyModel updateFormDangKy(FormDangKyModel formDangKyModel) {
+        FormDangKyModel model = getFormDangKyById(formDangKyModel.getId());
         model.setTrangThai(formDangKyModel.getTrangThai());
         model.setCanBo(formDangKyModel.getCanBo());
         model.setDanhHieu(formDangKyModel.getDanhHieu());
         formDangKyRepository.updateFormDangKy(model);
-        return getFormDangKyById(id);
+        return getFormDangKyById(formDangKyModel.getId());
     }
 
     public List<FormDangKyModel> getFormWithStudent(){

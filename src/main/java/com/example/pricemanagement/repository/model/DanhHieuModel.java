@@ -1,5 +1,7 @@
 package com.example.pricemanagement.repository.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,7 +21,7 @@ public class DanhHieuModel {
     @Column(name = "idDanhHieu")
     private Long id;
     private String tenDanhHieu;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "danhHieu")
     private Set<FormDangKyModel> formDangKys;
 

@@ -11,4 +11,7 @@ import java.util.List;
 public interface ThanhVienBaseRepository extends JpaRepository<ThanhVienModel, Long>{
     @Query(value = "SELECT * FROM thanhvien WHERE id_so_ho_khau= :id", nativeQuery = true)
     List<ThanhVienModel> getThanhVienByIdSoHoKhau(String id);
+
+    @Query(value = "SELECT * FROM thanhvien WHERE (extract(year from now()) - nam_sinh) <= 18", nativeQuery = true)
+    List<ThanhVienModel> getChildren();
 }

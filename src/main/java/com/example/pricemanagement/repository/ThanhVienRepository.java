@@ -22,4 +22,8 @@ public class ThanhVienRepository {
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(String id){
         return thanhVienBaseRepository.getThanhVienByIdSoHoKhau(id);
     }
+
+    public List<ThanhVienModel> getChildren(){
+        return thanhVienBaseRepository.getChildren();
+    }
 }
