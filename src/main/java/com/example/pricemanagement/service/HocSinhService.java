@@ -23,8 +23,10 @@ public class HocSinhService {
     }
 
     public List<HocSinhModel> getHocSinhById(String maGiayKhaiSinh){
-        List<HocSinhModel> fetch = getHocSinh();
-        List<HocSinhModel> response = fetch.stream().filter(hs->hs.getMaGiayKhaiSinh().equals(maGiayKhaiSinh)).collect(Collectors.toList());
-        return response;
+        return this.hocSinhRepository.getHocSinhByGKS(maGiayKhaiSinh);
+    }
+
+    public List<HocSinhModel> getHocSinhByIdshk(String idSoHoKhau){
+        return this.hocSinhRepository.getHocSinhByIdshk(idSoHoKhau);
     }
 }

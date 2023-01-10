@@ -1,14 +1,20 @@
 package com.example.pricemanagement.repository.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "HOGIADINH")
-public class HoGiaDinhModel {
+
+public class HoGiaDinhModel implements Serializable {
     @Id
+    @Column(name = "id_so_ho_khau")
     private String idSoHoKhau;
     private String password;
     private String tenChuHo;
+    @OneToMany(mappedBy = "hoGiaDinh")
+    private Set<ThanhVienModel> thanhVienModels;
 
     public HoGiaDinhModel() {
     }

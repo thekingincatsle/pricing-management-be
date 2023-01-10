@@ -15,7 +15,6 @@ public class FormDangKyService {
         this.formDangKyRepository = formDangKyRepository;
     }
 
-
     public List<FormDangKyModel> getFormDangKy() {
         return formDangKyRepository.getFormDangKy();
     }
@@ -32,13 +31,13 @@ public class FormDangKyService {
         return formDangKyModel;
     }
 
-    public FormDangKyModel updateFormDangKy(Long id, FormDangKyModel formDangKyModel) {
-        FormDangKyModel model = getFormDangKyById(id);
+    public FormDangKyModel updateFormDangKy(FormDangKyModel formDangKyModel) {
+        FormDangKyModel model = getFormDangKyById(formDangKyModel.getId());
         model.setTrangThai(formDangKyModel.getTrangThai());
-        model.setEmail(formDangKyModel.getEmail());
+        model.setCanBo(formDangKyModel.getCanBo());
         model.setDanhHieu(formDangKyModel.getDanhHieu());
         formDangKyRepository.updateFormDangKy(model);
-        return model;
+        return getFormDangKyById(formDangKyModel.getId());
     }
 
     public List<FormDangKyModel> getFormWithStudent(){

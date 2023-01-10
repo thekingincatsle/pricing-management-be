@@ -16,8 +16,18 @@ public class ThanhVienController {
         this.thanhVienService = thanhVienService;
     }
 
+    @GetMapping("/get-all")
+    public List<ThanhVienModel> getThanhVien(){
+        return this.thanhVienService.getThanhVien();
+    }
+
     @GetMapping("/get-by-id-shk")
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(@RequestParam(value = "id_shk") String idSoHoKhau){
         return this.thanhVienService.getThanhVienByIdSoHoKhau(idSoHoKhau);
+    }
+
+    @GetMapping("/get-children")
+    public List<ThanhVienModel> getChildren(){
+        return this.thanhVienService.getChildren();
     }
 }

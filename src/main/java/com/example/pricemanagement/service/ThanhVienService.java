@@ -21,8 +21,10 @@ public class ThanhVienService {
     }
 
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(String idSoHoKhau){
-        List<ThanhVienModel> fetch = this.getThanhVien();
-        List<ThanhVienModel> response = fetch.stream().filter(t->t.getIdSoHoKhau().equals(idSoHoKhau)).collect(Collectors.toList());
-        return response;
+        return this.thanhVienRepository.getThanhVienByIdSoHoKhau(idSoHoKhau);
+    }
+
+    public List<ThanhVienModel> getChildren(){
+        return thanhVienRepository.getChildren();
     }
 }

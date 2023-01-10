@@ -1,24 +1,36 @@
 package com.example.pricemanagement.repository.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "THANHVIEN")
-public class ThanhVienModel {
+public class ThanhVienModel{
     @Id
+    @Column(name = "ma_giay_khai_sinh")
     private String maGiayKhaiSinh;
     private String ten;
+    private String gioiTinh;
     private int namSinh;
-    private String idSoHoKhau;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_so_ho_khau", nullable = false)
+    private HoGiaDinhModel hoGiaDinh;
+
+    @OneToOne(mappedBy = "thanhVien", fetch = FetchType.LAZY)
+    private HocSinhModel hocSinh;
 
     public ThanhVienModel() {
     }
 
-    public ThanhVienModel(String maGiayKhaiSinh, String ten, int namSinh, String idSoHoKhau) {
+    public ThanhVienModel(String maGiayKhaiSinh, String ten, String gioiTinh, int namSinh, HoGiaDinhModel hoGiaDinh, HocSinhModel hocSinh) {
         this.maGiayKhaiSinh = maGiayKhaiSinh;
         this.ten = ten;
+        this.gioiTinh = gioiTinh;
         this.namSinh = namSinh;
-        this.idSoHoKhau = idSoHoKhau;
+        this.hoGiaDinh = hoGiaDinh;
+        this.hocSinh = hocSinh;
     }
 
     public String getMaGiayKhaiSinh() {
@@ -37,6 +49,14 @@ public class ThanhVienModel {
         this.ten = ten;
     }
 
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
     public int getNamSinh() {
         return namSinh;
     }
@@ -45,11 +65,11 @@ public class ThanhVienModel {
         this.namSinh = namSinh;
     }
 
-    public String getIdSoHoKhau() {
-        return idSoHoKhau;
+    public HoGiaDinhModel getHoGiaDinh() {
+        return hoGiaDinh;
     }
 
-    public void setIdSoHokhau(String idSoHokhau) {
-        this.idSoHoKhau = idSoHoKhau;
+    public void setHoGiaDinh(HoGiaDinhModel hoGiaDinh) {
+        this.hoGiaDinh = hoGiaDinh;
     }
 }

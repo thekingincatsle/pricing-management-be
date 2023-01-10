@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "CANBO")
+@Table(name = "KETOAN")
 
-public class CanBoModel {
+public class KeToanModel {
     @Id
     private String email;
     private String ten;
     private String password;
-    @OneToMany(mappedBy = "canBo")
-    private Set<FormDangKyModel> formDangKyModels;
+    @OneToMany(mappedBy = "keToan")
+    private Set<XacNhanPhanThuongHocSinhModel> xacNhanPhanThuongHocSinhs;
 
-    public CanBoModel() {
+    public KeToanModel() {
     }
 
-    public CanBoModel(String email, String ten, String password) {
+    public KeToanModel(String email, String ten, String password) {
         this.email = email;
         this.ten = ten;
         this.password = password;

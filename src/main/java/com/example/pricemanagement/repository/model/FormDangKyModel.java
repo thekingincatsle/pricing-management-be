@@ -20,12 +20,18 @@ public class FormDangKyModel {
     private String anhMinhChung;
     private String giaiThuong;
 
-    private String danhHieu;
+    @ManyToOne()
+    @JoinColumn(name = "idDanhHieu")
+    private DanhHieuModel danhHieu = new DanhHieuModel();
     private String trangThai;
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "maGiayKhaiSinh", nullable = false)
     private HocSinhModel hocSinh;
-    private String email;
+    @ManyToOne()
+    @JoinColumn(name = "email")
+    private CanBoModel canBo = new CanBoModel();
+    @OneToOne(mappedBy = "formDangKy", fetch = FetchType.LAZY)
+    private XacNhanPhanThuongHocSinhModel xacNhanPhanThuongHocSinh;
 
 
     public FormDangKyModel() {
@@ -38,7 +44,7 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
@@ -46,13 +52,13 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String danhHieu, String trangThai, HocSinhModel hocSinh, String email) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
         this.danhHieu = danhHieu;
         this.trangThai = trangThai;
         this.hocSinh = hocSinh;
-        this.email = email;
+        this.canBo = canBo;
     }
 
     public Long getId() {
@@ -75,11 +81,16 @@ public class FormDangKyModel {
         this.giaiThuong = giaiThuong;
     }
 
-    public String getDanhHieu() {
-        return danhHieu;
+    public DanhHieuModel getDanhHieu() {
+        if(danhHieu!=null){
+            return danhHieu;
+        }
+        else{
+            return null;
+        }
     }
 
-    public void setDanhHieu(String danhHieu) {
+    public void setDanhHieu(DanhHieuModel danhHieu) {
         this.danhHieu = danhHieu;
     }
 
@@ -99,11 +110,12 @@ public class FormDangKyModel {
         this.hocSinh = hocSinh;
     }
 
-    public String getEmail() {
-        return email;
+    public CanBoModel getCanBo() {
+        return canBo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCanBo(CanBoModel canBo) {
+        this.canBo = canBo;
     }
+
 }
