@@ -31,7 +31,7 @@ public class CanBoService {
                 response = new AccountMessageStaff(true, "Đăng nhập thành công", fetch.get(0));
             }
             else{
-                response = new AccountMessageStaff(false, "Sai mật khẩu cho cán bộ " + fetch.get(0).getTen());
+                response = new AccountMessageStaff(false, "Sai mật khẩu cho cán bộ " + fetch.get(0).getEmail());
             }
         }
         return response;

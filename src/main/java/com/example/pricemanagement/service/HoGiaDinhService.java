@@ -29,7 +29,7 @@ public class HoGiaDinhService {
                 response = new AccountMessageFamily(true, "Đăng nhập thành công", fetch.get(0));
             }
             else{
-                response = new AccountMessageFamily(false, "Sai mật khẩu cho hộ gia đình " + fetch.get(0).getTenChuHo());
+                response = new AccountMessageFamily(false, "Sai mật khẩu cho hộ gia đình " + fetch.get(0).getIdSoHoKhau());
             }
         }
         return response;
