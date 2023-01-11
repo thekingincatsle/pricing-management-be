@@ -19,6 +19,11 @@ public class HoGiaDinhModel implements Serializable {
     public HoGiaDinhModel() {
     }
 
+    public HoGiaDinhModel(String idSoHoKhau, String password) {
+        this.idSoHoKhau = idSoHoKhau;
+        this.password = password;
+    }
+
     public HoGiaDinhModel(String idSoHoKhau, String password, String tenChuHo) {
         this.idSoHoKhau = idSoHoKhau;
         this.password = password;
