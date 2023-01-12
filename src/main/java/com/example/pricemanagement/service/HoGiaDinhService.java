@@ -2,10 +2,9 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.HoGiaDinhRepository;
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.pricemanagement.type.acountmessage.AccountMessageFamily;
 import org.springframework.stereotype.Service;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class HoGiaDinhService {
@@ -17,5 +16,22 @@ public class HoGiaDinhService {
 
     public List<HoGiaDinhModel> getById(String id){
         return this.hoGiaDinhRepository.getById(id);
+    }
+
+    public AccountMessageFamily login(HoGiaDinhModel hoGiaDinhModel){
+        List<HoGiaDinhModel> fetch = getById(hoGiaDinhModel.getIdSoHoKhau());
+        AccountMessageFamily response;
+        if(fetch.isEmpty()){
+            response = new AccountMessageFamily(false, "Sai mã số hộ gia đình");
+        }
+        else{
+            if(fetch.get(0).getPassword().equals(hoGiaDinhModel.getPassword())){
+                response = new AccountMessageFamily(true, "Đăng nhập thành công", fetch.get(0));
+            }
+            else{
+                response = new AccountMessageFamily(false, "Sai mật khẩu cho hộ gia đình " + fetch.get(0).getIdSoHoKhau());
+            }
+        }
+        return response;
     }
 }
