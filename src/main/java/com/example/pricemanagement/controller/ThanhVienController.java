@@ -16,16 +16,13 @@ public class ThanhVienController {
         this.thanhVienService = thanhVienService;
     }
 
-    @GetMapping("/get-all")
-    public List<ThanhVienModel> getThanhVien(){
-        return this.thanhVienService.getThanhVien();
-    }
-
+    //Get members' information by an input family's id
     @GetMapping("/get-by-id-shk")
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(@RequestParam(value = "id_shk") String idSoHoKhau){
         return this.thanhVienService.getThanhVienByIdSoHoKhau(idSoHoKhau);
     }
 
+    //Get all members with age under or equal to 18
     @GetMapping("/get-children")
     public List<ThanhVienModel> getChildren(){
         return this.thanhVienService.getChildren();

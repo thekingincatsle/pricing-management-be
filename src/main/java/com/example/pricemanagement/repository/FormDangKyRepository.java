@@ -30,9 +30,6 @@ public class FormDangKyRepository {
     public void updateFormDangKy(FormDangKyModel formDangKyModel) {
         formDangKyBaseRepository.save(formDangKyModel);
     }
-    public List<FormDangKyModel> getFormWithStudent(){
-        return this.formDangKyBaseRepository.getFormWithStudent();
-    }
 
     public List<FormDangKyModel> getAcceptedForm(){
         return this.formDangKyBaseRepository.getAcceptedForm();

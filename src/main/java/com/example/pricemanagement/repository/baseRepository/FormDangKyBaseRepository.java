@@ -9,9 +9,6 @@ import java.util.List;
 
 @Component
 public interface FormDangKyBaseRepository extends JpaRepository<FormDangKyModel, Long>{
-    @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh", nativeQuery = true)
-    List<FormDangKyModel>  getFormWithStudent();
-
     @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh WHERE f.trang_thai = 'Xác nhận'", nativeQuery = true)
     List<FormDangKyModel>  getAcceptedForm();
 }

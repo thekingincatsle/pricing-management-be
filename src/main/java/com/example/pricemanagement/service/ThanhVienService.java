@@ -16,10 +16,6 @@ public class ThanhVienService {
         this.thanhVienRepository = thanhVienRepository;
     }
 
-    public List<ThanhVienModel> getThanhVien(){
-        return thanhVienRepository.getThanhVien();
-    }
-
     public List<ThanhVienModel> getThanhVienByIdSoHoKhau(String idSoHoKhau){
         return this.thanhVienRepository.getThanhVienByIdSoHoKhau(idSoHoKhau);
     }

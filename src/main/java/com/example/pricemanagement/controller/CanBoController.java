@@ -2,13 +2,13 @@ package com.example.pricemanagement.controller;
 
 import com.example.pricemanagement.repository.model.CanBoModel;
 import com.example.pricemanagement.service.CanBoService;
-import com.example.pricemanagement.type.acountmessage.AccountMessageStaff;
+import com.example.pricemanagement.type.acountmessage.AccountMessageAdmin;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/staff")
+@RequestMapping("/api/admin")
 public class CanBoController {
     private final CanBoService canBoService;
 
@@ -16,8 +16,9 @@ public class CanBoController {
         this.canBoService = canBoService;
     }
 
+    //Validate admin's login information
     @PostMapping("/login")
-    public AccountMessageStaff login(@RequestBody CanBoModel canBoModel){
+    public AccountMessageAdmin login(@RequestBody CanBoModel canBoModel){
         return this.canBoService.login(canBoModel);
     }
 }
