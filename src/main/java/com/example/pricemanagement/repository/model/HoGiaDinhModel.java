@@ -14,6 +14,7 @@ public class HoGiaDinhModel implements Serializable {
     private String password;
     private String tenChuHo;
     private String diaChi;
+
     @OneToMany(mappedBy = "hoGiaDinh")
     private Set<ThanhVienModel> thanhVienModels;
 
