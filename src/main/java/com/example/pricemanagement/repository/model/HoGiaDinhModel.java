@@ -13,21 +13,24 @@ public class HoGiaDinhModel implements Serializable {
     private String idSoHoKhau;
     private String password;
     private String tenChuHo;
+    private String diaChi;
     @OneToMany(mappedBy = "hoGiaDinh")
     private Set<ThanhVienModel> thanhVienModels;
 
     public HoGiaDinhModel() {
     }
 
-    public HoGiaDinhModel(String idSoHoKhau, String password) {
-        this.idSoHoKhau = idSoHoKhau;
-        this.password = password;
-    }
-
-    public HoGiaDinhModel(String idSoHoKhau, String password, String tenChuHo) {
+    public HoGiaDinhModel(String idSoHoKhau, String password, String tenChuHo, String diaChi) {
         this.idSoHoKhau = idSoHoKhau;
         this.password = password;
         this.tenChuHo = tenChuHo;
+        this.diaChi = diaChi;
+    }
+
+    public HoGiaDinhModel(String password, String tenChuHo, String diaChi) {
+        this.password = password;
+        this.tenChuHo = tenChuHo;
+        this.diaChi = diaChi;
     }
 
     public String getIdSoHoKhau() {
@@ -52,5 +55,13 @@ public class HoGiaDinhModel implements Serializable {
 
     public void setTenChuHo(String tenChuHo) {
         this.tenChuHo = tenChuHo;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 }
