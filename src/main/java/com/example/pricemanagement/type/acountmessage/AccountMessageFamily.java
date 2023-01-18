@@ -3,22 +3,22 @@ package com.example.pricemanagement.type.acountmessage;
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
 
 public class AccountMessageFamily extends AccountMessage {
-    private HoGiaDinhModel hoGiaDinhModel;
+    private HoGiaDinhModel hoGiaDinh;
 
     public AccountMessageFamily(boolean validated, String message) {
         super(validated, message);
     }
 
-    public AccountMessageFamily(boolean validated, String message, HoGiaDinhModel hoGiaDinhModel) {
+    public AccountMessageFamily(boolean validated, String message, HoGiaDinhModel hoGiaDinh) {
         super(validated, message);
-        this.hoGiaDinhModel = hoGiaDinhModel;
+        this.hoGiaDinh = hoGiaDinh;
     }
 
-    public HoGiaDinhModel getHoGiaDinhModel() {
-        return hoGiaDinhModel;
+    public HoGiaDinhModel getHoGiaDinh() {
+        return hoGiaDinh;
     }
 
-    public void setHoGiaDinhModel(HoGiaDinhModel hoGiaDinhModel) {
-        this.hoGiaDinhModel = hoGiaDinhModel;
+    public void setHoGiaDinh(HoGiaDinhModel hoGiaDinh) {
+        this.hoGiaDinh = hoGiaDinh;
     }
 }

@@ -33,15 +33,14 @@ public class FormDangKyService {
 
     public FormDangKyModel updateFormDangKy(FormDangKyModel formDangKyModel) {
         FormDangKyModel model = getFormDangKyById(formDangKyModel.getId());
+
+        //Update trangThai, danhHieu and CanBo of a register form
         model.setTrangThai(formDangKyModel.getTrangThai());
         model.setCanBo(formDangKyModel.getCanBo());
         model.setDanhHieu(formDangKyModel.getDanhHieu());
+
         formDangKyRepository.updateFormDangKy(model);
         return getFormDangKyById(formDangKyModel.getId());
-    }
-
-    public List<FormDangKyModel> getFormWithStudent(){
-        return this.formDangKyRepository.getFormWithStudent();
     }
 
     public List<FormDangKyModel> getAcceptedForm(){

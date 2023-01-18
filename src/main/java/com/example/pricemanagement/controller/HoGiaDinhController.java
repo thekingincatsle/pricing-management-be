@@ -17,11 +17,13 @@ public class HoGiaDinhController {
         this.hoGiaDinhService = hoGiaDinhService;
     }
 
+    //Get family information by an input id
     @GetMapping("/get-by-id")
     public List<HoGiaDinhModel> getById(@RequestParam(value = "id") String id){
         return this.hoGiaDinhService.getById(id);
     }
 
+    //Validate family's login information
     @PostMapping("/login")
     public AccountMessageFamily login(@RequestBody HoGiaDinhModel hoGiaDinhModel){
         return this.hoGiaDinhService.login(hoGiaDinhModel);

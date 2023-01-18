@@ -2,7 +2,7 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.CanBoRepository;
 import com.example.pricemanagement.repository.model.CanBoModel;
-import com.example.pricemanagement.type.acountmessage.AccountMessageStaff;
+import com.example.pricemanagement.type.acountmessage.AccountMessageAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -20,18 +20,20 @@ public class CanBoService {
         return this.canBoRepository.getCanBoByEmail(email);
     }
 
-    public AccountMessageStaff login(CanBoModel canBoModel){
+    public AccountMessageAdmin login(CanBoModel canBoModel){
         List<CanBoModel> fetch = getCanBoByEmail(canBoModel.getEmail());
-        AccountMessageStaff response;
+        AccountMessageAdmin response;
         if(fetch.isEmpty()){
-            response = new AccountMessageStaff(false, "Sai tài khoản cán bộ");
+            //No account is found
+            response = new AccountMessageAdmin(false, "Sai tài khoản cán bộ");
         }
         else{
             if(fetch.get(0).getPassword().equals(canBoModel.getPassword())){
-                response = new AccountMessageStaff(true, "Đăng nhập thành công", fetch.get(0));
+                response = new AccountMessageAdmin(true, "Đăng nhập thành công", fetch.get(0));
             }
             else{
-                response = new AccountMessageStaff(false, "Sai mật khẩu cho cán bộ " + fetch.get(0).getEmail());
+                //Account found but wrong password
+                response = new AccountMessageAdmin(false, "Sai mật khẩu cho cán bộ " + fetch.get(0).getEmail());
             }
         }
         return response;

@@ -22,6 +22,7 @@ public class HoGiaDinhService {
         List<HoGiaDinhModel> fetch = getById(hoGiaDinhModel.getIdSoHoKhau());
         AccountMessageFamily response;
         if(fetch.isEmpty()){
+            //No account is found
             response = new AccountMessageFamily(false, "Sai mã số hộ gia đình");
         }
         else{
@@ -29,6 +30,7 @@ public class HoGiaDinhService {
                 response = new AccountMessageFamily(true, "Đăng nhập thành công", fetch.get(0));
             }
             else{
+                //Account found but wrong password
                 response = new AccountMessageFamily(false, "Sai mật khẩu cho hộ gia đình " + fetch.get(0).getIdSoHoKhau());
             }
         }

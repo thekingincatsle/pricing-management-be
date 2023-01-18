@@ -18,10 +18,6 @@ public class HocSinhService {
         this.thanhVienService = thanhVienService;
     }
 
-    public List<HocSinhModel> getHocSinh(){
-        return this.hocSinhRepository.getHocSinh();
-    }
-
     public List<HocSinhModel> getHocSinhById(String maGiayKhaiSinh){
         return this.hocSinhRepository.getHocSinhByGKS(maGiayKhaiSinh);
     }
