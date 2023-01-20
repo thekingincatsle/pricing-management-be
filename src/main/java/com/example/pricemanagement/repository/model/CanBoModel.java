@@ -9,7 +9,7 @@ import java.util.Set;
 public class CanBoModel {
     @Id
     private String email;
-    private String ten;
+    private String tenCanBo;
     private String password;
     @OneToMany(mappedBy = "canBo")
     private Set<FormDangKyModel> formDangKyModels;
@@ -17,9 +17,9 @@ public class CanBoModel {
     public CanBoModel() {
     }
 
-    public CanBoModel(String email, String ten, String password) {
+    public CanBoModel(String email, String tenCanBo, String password) {
         this.email = email;
-        this.ten = ten;
+        this.tenCanBo = tenCanBo;
         this.password = password;
     }
 
@@ -31,12 +31,12 @@ public class CanBoModel {
         this.email = email;
     }
 
-    public String getTen() {
-        return ten;
+    public String getTenCanBo() {
+        return tenCanBo;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setTenCanBo(String tenCanBo) {
+        this.tenCanBo = tenCanBo;
     }
 
     public String getPassword() {
