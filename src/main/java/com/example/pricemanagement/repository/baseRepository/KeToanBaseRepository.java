@@ -1,6 +1,7 @@
 package com.example.pricemanagement.repository.baseRepository;
 
 import com.example.pricemanagement.repository.model.CanBoModel;
+import com.example.pricemanagement.repository.model.KeToanModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public interface CanBoBaseRepository extends JpaRepository<CanBoModel, Long>{
-    @Query(value = "SELECT * FROM canbo WHERE email= :email", nativeQuery = true)
-    List<CanBoModel> getCanBoByEmail(String email);
+public interface KeToanBaseRepository extends JpaRepository<KeToanModel, Long> {
+    @Query(value = "SELECT * FROM ketoan WHERE email= :email", nativeQuery = true)
+    List<KeToanModel> getKeToanByEmail(String email);
 }
