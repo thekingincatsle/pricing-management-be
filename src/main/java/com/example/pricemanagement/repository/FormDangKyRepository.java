@@ -8,7 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 @Repository
 public class FormDangKyRepository {
-    private FormDangKyBaseRepository formDangKyBaseRepository ;
+    private final FormDangKyBaseRepository formDangKyBaseRepository ;
 
     public FormDangKyRepository(FormDangKyBaseRepository formDangKyBaseRepository) {
         this.formDangKyBaseRepository = formDangKyBaseRepository;
