@@ -8,7 +8,7 @@ import java.util.Set;
 public class XacNhanPhanThuongHocSinhModel {
     @Id
     private Long id;
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn(name="id", referencedColumnName="id")
     private FormDangKyModel formDangKy;
     @ManyToOne()
@@ -31,6 +31,10 @@ public class XacNhanPhanThuongHocSinhModel {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public FormDangKyModel getFormDangKy() {

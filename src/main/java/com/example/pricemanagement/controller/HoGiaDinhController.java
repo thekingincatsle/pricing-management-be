@@ -2,8 +2,7 @@ package com.example.pricemanagement.controller;
 
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
 import com.example.pricemanagement.service.HoGiaDinhService;
-import com.example.pricemanagement.type.acountmessage.AccountMessage;
-import com.example.pricemanagement.type.acountmessage.AccountMessageFamily;
+import com.example.pricemanagement.type.accountmessage.AccountMessageFamily;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

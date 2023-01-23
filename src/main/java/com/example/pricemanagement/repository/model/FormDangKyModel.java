@@ -19,7 +19,7 @@ public class FormDangKyModel {
     private Long id;
     private String anhMinhChung;
     private String giaiThuong;
-
+    private int nam;
     @ManyToOne()
     @JoinColumn(name = "idDanhHieu")
     private DanhHieuModel danhHieu = new DanhHieuModel();
@@ -37,28 +37,42 @@ public class FormDangKyModel {
     public FormDangKyModel() {
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, String trangThai, HocSinhModel hocSinh) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, int nam, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
+        this.nam = nam;
         this.trangThai = trangThai;
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, int nam, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
+        this.nam = nam;
         this.danhHieu = danhHieu;
         this.trangThai = trangThai;
         this.hocSinh = hocSinh;
     }
 
-    public FormDangKyModel(String anhMinhChung, String giaiThuong, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, int nam, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo) {
         this.anhMinhChung = anhMinhChung;
         this.giaiThuong = giaiThuong;
+        this.nam = nam;
         this.danhHieu = danhHieu;
         this.trangThai = trangThai;
         this.hocSinh = hocSinh;
         this.canBo = canBo;
+    }
+
+    public FormDangKyModel(String anhMinhChung, String giaiThuong, int nam, DanhHieuModel danhHieu, String trangThai, HocSinhModel hocSinh, CanBoModel canBo, XacNhanPhanThuongHocSinhModel xacNhanPhanThuongHocSinh) {
+        this.anhMinhChung = anhMinhChung;
+        this.giaiThuong = giaiThuong;
+        this.nam = nam;
+        this.danhHieu = danhHieu;
+        this.trangThai = trangThai;
+        this.hocSinh = hocSinh;
+        this.canBo = canBo;
+        this.xacNhanPhanThuongHocSinh = xacNhanPhanThuongHocSinh;
     }
 
     public Long getId() {
@@ -79,6 +93,14 @@ public class FormDangKyModel {
 
     public void setGiaiThuong(String giaiThuong) {
         this.giaiThuong = giaiThuong;
+    }
+
+    public int getNam() {
+        return nam;
+    }
+
+    public void setNam(int nam) {
+        this.nam = nam;
     }
 
     public DanhHieuModel getDanhHieu() {

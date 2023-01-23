@@ -34,4 +34,9 @@ public class FormDangKyRepository {
     public List<FormDangKyModel> getAcceptedForm(){
         return this.formDangKyBaseRepository.getAcceptedForm();
     }
+
+
+    public List<FormDangKyModel> getAcceptedFormByYear(int year){
+        return this.formDangKyBaseRepository.getAcceptedFormByYear(year);
+    }
 }
