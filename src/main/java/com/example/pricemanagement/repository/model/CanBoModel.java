@@ -11,6 +11,7 @@ public class CanBoModel {
     private String email;
     private String tenCanBo;
     private String password;
+
     @OneToMany(mappedBy = "canBo")
     private Set<FormDangKyModel> formDangKyModels;
 
