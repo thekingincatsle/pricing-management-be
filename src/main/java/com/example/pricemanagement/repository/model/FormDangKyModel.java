@@ -32,6 +32,8 @@ public class FormDangKyModel {
     private CanBoModel canBo = new CanBoModel();
     @OneToOne(mappedBy = "formDangKy", fetch = FetchType.LAZY)
     private XacNhanPhanThuongHocSinhModel xacNhanPhanThuongHocSinh;
+    @OneToOne(mappedBy = "formDangKy", fetch = FetchType.LAZY)
+    private FormXacNhanHocSinhModel formXacNhanHocSinh;
 
 
     public FormDangKyModel() {
