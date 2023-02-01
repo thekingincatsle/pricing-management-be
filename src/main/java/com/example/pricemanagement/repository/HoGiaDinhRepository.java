@@ -15,6 +15,10 @@ public class HoGiaDinhRepository {
         this.hoGiaDinhBaseRepository = hoGiaDinhBaseRepository;
     }
 
+    public List<HoGiaDinhModel> getHoGiaDinh(){
+        return this.hoGiaDinhBaseRepository.findAll();
+    }
+
     public List<HoGiaDinhModel> getById(String id){
         return this.hoGiaDinhBaseRepository.getById(id);
     }

@@ -17,6 +17,11 @@ public class HoGiaDinhController {
         this.hoGiaDinhService = hoGiaDinhService;
     }
 
+    @GetMapping("/get-all")
+    public List<HoGiaDinhModel> getHoGiaDinh(){
+        return this.hoGiaDinhService.getHoGiaDinh();
+    }
+
     //Get family information by an input id
     @GetMapping("/get-by-id")
     public List<HoGiaDinhModel> getById(@RequestParam(value = "id") String id){
