@@ -14,6 +14,10 @@ public class HoGiaDinhService {
         this.hoGiaDinhRepository = hoGiaDinhRepository;
     }
 
+    public List<HoGiaDinhModel> getHoGiaDinh(){
+        return this.hoGiaDinhRepository.getHoGiaDinh();
+    }
+
     public List<HoGiaDinhModel> getById(String id){
         return this.hoGiaDinhRepository.getById(id);
     }
