@@ -13,6 +13,8 @@ public class KeToanModel {
     private String password;
     @OneToMany(mappedBy = "keToan")
     private Set<XacNhanPhanThuongHocSinhModel> xacNhanPhanThuongHocSinhs;
+    @OneToMany(mappedBy = "keToan")
+    private Set<XacNhanPhanThuongThieuNhiModel> xacNhanPhanThuongThieuNhis;
 
     public KeToanModel() {
     }

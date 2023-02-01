@@ -21,6 +21,12 @@ public class ThanhVienModel{
     @OneToOne(mappedBy = "thanhVien", fetch = FetchType.LAZY)
     private HocSinhModel hocSinh;
 
+    @OneToMany(mappedBy = "thanhVien")
+    private Set<FormXacNhanThieuNhiModel> formXacNhanThieuNhis;
+
+    @OneToMany(mappedBy = "thanhVien")
+    private Set<TraoThuongThieuNhiModel> traoThuongThieuNhis;
+
     public ThanhVienModel() {
     }
 
