@@ -47,4 +47,61 @@ public class FormDangKyController {
     public List<FormDangKyModel> getAcceptedForm(){
         return this.formDangKyService.getAcceptedForm();
     }
+
+    @GetMapping("/get-by-status")
+    public List<FormDangKyModel> getFormByStatus(@RequestParam(name = "status") String status){
+        return this.formDangKyService.getFormByStatus(status);
+    }
+
+    @GetMapping("/get-by-birth-year")
+    public List<FormDangKyModel> getFormByBirthYear(@RequestParam(name = "year") int year){
+        return this.formDangKyService.getFormByBirthYear(year);
+    }
+
+    @GetMapping("/get-by-name")
+    public List<FormDangKyModel> getFormByName(@RequestParam(name = "name") String name){
+        return this.formDangKyService.getFormByName(name);
+    }
+
+    @GetMapping("/get-by-id-shk")
+    public List<FormDangKyModel> getFormByIDSHK(@RequestParam(name = "id_shk") String id_shk){
+        return this.formDangKyService.getFormByIDSHK(id_shk);
+    }
+
+    @GetMapping("/sorting")
+    public List<FormDangKyModel> getFormSortByField(@RequestParam(value = "sort") String sort,
+                                                    @RequestParam(value = "sortField") String field){
+        return this.formDangKyService.getFormSortByField(field, sort);
+    }
+
+    @GetMapping("/get-accepted-form-by-birth-year")
+    public List<FormDangKyModel> getAcceptedFormByBirthYear(@RequestParam(name = "year") int year){
+        return this.formDangKyService.getAcceptedFormByBirthYear(year);
+    }
+
+    @GetMapping("/get-accepted-form-by-name")
+    public List<FormDangKyModel> getAcceptedFormByName(@RequestParam(name = "name") String name){
+        return this.formDangKyService.getAcceptedFormByName(name);
+    }
+
+    @GetMapping("/get-accepted-form-by-id-shk")
+    public List<FormDangKyModel> getAcceptedFormByIDSHK(@RequestParam(name = "id_shk") String id_shk){
+        return this.formDangKyService.getAcceptedFormByIDSHK(id_shk);
+    }
+
+    @GetMapping("/get-accepted-form-by-admin")
+    public List<FormDangKyModel> getAcceptedFormByAdmin(@RequestParam(name = "name") String name){
+        return this.formDangKyService.getAcceptedFormByAdmin(name);
+    }
+
+    @GetMapping("/get-accepted-form-by-title")
+    public List<FormDangKyModel> getAcceptedFormByTitle(@RequestParam(name = "name") String name){
+        return this.formDangKyService.getAcceptedFormByTitle(name);
+    }
+
+    @GetMapping("/sorting-accepted")
+    public List<FormDangKyModel> getAcceptedFormSortByField(@RequestParam(value = "sort") String sort,
+                                                    @RequestParam(value = "sortField") String field){
+        return this.formDangKyService.getAcceptedFormSortByField(field, sort);
+    }
 }
