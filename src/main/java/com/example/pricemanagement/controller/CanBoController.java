@@ -2,10 +2,8 @@ package com.example.pricemanagement.controller;
 
 import com.example.pricemanagement.repository.model.CanBoModel;
 import com.example.pricemanagement.service.CanBoService;
-import com.example.pricemanagement.type.acountmessage.AccountMessageAdmin;
+import com.example.pricemanagement.type.accountmessage.AccountMessageAdmin;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/admin")

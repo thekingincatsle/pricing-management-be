@@ -2,7 +2,7 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.CanBoRepository;
 import com.example.pricemanagement.repository.model.CanBoModel;
-import com.example.pricemanagement.type.acountmessage.AccountMessageAdmin;
+import com.example.pricemanagement.type.accountmessage.AccountMessageAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;

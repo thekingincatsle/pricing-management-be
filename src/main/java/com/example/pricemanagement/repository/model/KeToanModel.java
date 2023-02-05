@@ -9,7 +9,7 @@ import java.util.Set;
 public class KeToanModel {
     @Id
     private String email;
-    private String ten;
+    private String tenKeToan;
     private String password;
     @OneToMany(mappedBy = "keToan")
     private Set<XacNhanPhanThuongHocSinhModel> xacNhanPhanThuongHocSinhs;
@@ -19,9 +19,9 @@ public class KeToanModel {
     public KeToanModel() {
     }
 
-    public KeToanModel(String email, String ten, String password) {
+    public KeToanModel(String email, String tenKeToan, String password) {
         this.email = email;
-        this.ten = ten;
+        this.tenKeToan = tenKeToan;
         this.password = password;
     }
 
@@ -33,12 +33,12 @@ public class KeToanModel {
         this.email = email;
     }
 
-    public String getTen() {
-        return ten;
+    public String getTenKeToan() {
+        return tenKeToan;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setTenKeToan(String tenKeToan) {
+        this.tenKeToan = tenKeToan;
     }
 
     public String getPassword() {

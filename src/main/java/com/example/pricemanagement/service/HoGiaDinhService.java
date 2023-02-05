@@ -2,7 +2,7 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.HoGiaDinhRepository;
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
-import com.example.pricemanagement.type.acountmessage.AccountMessageFamily;
+import com.example.pricemanagement.type.accountmessage.AccountMessageFamily;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
