@@ -72,8 +72,8 @@ public class FormDangKyService {
                 return formDangKyRepository.getFormSortByNameDesc();
             }
         }
-        else if(field.equals("nam_sinh")){
-            if(sort.equals("asc")){
+        else if(field.equals("tuoi")){
+            if(sort.equals("desc")){
                 return formDangKyRepository.getFormSortByYearAsc();
             }
             else{
@@ -130,8 +130,8 @@ public class FormDangKyService {
                 return formDangKyRepository.getAcceptedFormSortByNameDesc();
             }
         }
-        else if(field.equals("nam_sinh")){
-            if(sort.equals("asc")){
+        else if(field.equals("tuoi")){
+            if(sort.equals("desc")){
                 return formDangKyRepository.getAcceptedFormSortByYearAsc();
             }
             else{
