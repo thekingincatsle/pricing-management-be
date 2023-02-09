@@ -7,6 +7,7 @@ import com.example.pricemanagement.repository.model.KeToanModel;
 import com.example.pricemanagement.repository.model.XacNhanPhanThuongHocSinhModel;
 import com.example.pricemanagement.type.accountantconfirmationmessage.AccountantConfirmationMessage;
 import com.example.pricemanagement.type.accountmessage.AccountMessageAccountant;
+import com.example.pricemanagement.type.AdminLoginInformation;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
@@ -26,7 +27,7 @@ public class KeToanService {
         return this.keToanRepository.getKeToanByEmail(email);
     }
 
-    public AccountMessageAccountant login(KeToanModel keToanModel){
+    public AccountMessageAccountant login(AdminLoginInformation keToanModel){
         List<KeToanModel> fetch = getKeToanByEmail(keToanModel.getEmail());
         AccountMessageAccountant response;
         if(fetch.isEmpty()){
