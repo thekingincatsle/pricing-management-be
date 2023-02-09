@@ -15,6 +15,6 @@ public class CanBoRepository {
     }
 
     public List<CanBoModel> getCanBoByEmail(String email){
-        return this.canBoBaseRepository.getCanBoBYEmail(email);
+        return this.canBoBaseRepository.getCanBoByEmail(email);
     }
 }

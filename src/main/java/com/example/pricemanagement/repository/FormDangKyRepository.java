@@ -150,4 +150,9 @@ public class FormDangKyRepository {
     public List<FormDangKyModel> getAcceptedFormSortByPrizeDesc(){
         return formDangKyBaseRepository.getAcceptedFormSortByPrizeDesc();
     }
+
+
+    public List<FormDangKyModel> getAcceptedFormByYear(int year){
+        return this.formDangKyBaseRepository.getAcceptedFormByYear(year);
+    }
 }

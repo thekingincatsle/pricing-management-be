@@ -174,4 +174,8 @@ public class FormDangKyService {
             return null;
         }
     }
+
+    public List<FormDangKyModel> getAcceptedFormByYear(int year){
+        return formDangKyRepository.getAcceptedFormByYear(year);
+    }
 }

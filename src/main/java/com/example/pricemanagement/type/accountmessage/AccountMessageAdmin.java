@@ -1,4 +1,4 @@
-package com.example.pricemanagement.type.acountmessage;
+package com.example.pricemanagement.type.accountmessage;
 
 import com.example.pricemanagement.repository.model.CanBoModel;
 

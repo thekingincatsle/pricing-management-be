@@ -181,4 +181,7 @@ public interface FormDangKyBaseRepository extends JpaRepository<FormDangKyModel,
             "ON dh.id_phan_thuong_hoc_sinh = pthsg.id_phan_thuong_hoc_sinh WHERE f.trang_thai = 'Xác nhận' " +
             "ORDER BY ten_phan_thuong desc", nativeQuery = true)
     List<FormDangKyModel> getAcceptedFormSortByPrizeDesc();
+
+    @Query(value = "SELECT * FROM formdangky f WHERE f.nam = :year AND f.trang_thai = 'Xác nhận'", nativeQuery = true)
+    List<FormDangKyModel>  getAcceptedFormByYear(int year);
 }
