@@ -53,9 +53,9 @@ public class FormDangKyController {
         return this.formDangKyService.getFormByStatus(status);
     }
 
-    @GetMapping("/get-by-birth-year")
-    public List<FormDangKyModel> getFormByBirthYear(@RequestParam(name = "year") int year){
-        return this.formDangKyService.getFormByBirthYear(year);
+    @GetMapping("/get-by-age")
+    public List<FormDangKyModel> getFormByBirthYear(@RequestParam(name = "age") int age){
+        return this.formDangKyService.getFormByBirthYear(age);
     }
 
     @GetMapping("/get-by-name")
@@ -74,9 +74,9 @@ public class FormDangKyController {
         return this.formDangKyService.getFormSortByField(field, sort);
     }
 
-    @GetMapping("/get-accepted-form-by-birth-year")
-    public List<FormDangKyModel> getAcceptedFormByBirthYear(@RequestParam(name = "year") int year){
-        return this.formDangKyService.getAcceptedFormByBirthYear(year);
+    @GetMapping("/get-accepted-form-by-age")
+    public List<FormDangKyModel> getAcceptedFormByBirthYear(@RequestParam(name = "age") int age){
+        return this.formDangKyService.getAcceptedFormByBirthYear(age);
     }
 
     @GetMapping("/get-accepted-form-by-name")
