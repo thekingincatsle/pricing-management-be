@@ -32,4 +32,14 @@ public class HoGiaDinhController {
     public AccountMessageFamily login(@RequestBody HoGiaDinhModel hoGiaDinhModel){
         return this.hoGiaDinhService.login(hoGiaDinhModel);
     }
+
+    @PostMapping("add")
+    public String addHoGiaDinh(@RequestBody HoGiaDinhModel hoGiaDinhModel){
+        return this.hoGiaDinhService.addHoGiaDinh(hoGiaDinhModel);
+    }
+
+    @DeleteMapping("delete")
+    public String deleteHoGiaDinh(@RequestBody HoGiaDinhModel hoGiaDinhModel){
+        return this.hoGiaDinhService.deleteHoGiaDinh(hoGiaDinhModel);
+    }
 }

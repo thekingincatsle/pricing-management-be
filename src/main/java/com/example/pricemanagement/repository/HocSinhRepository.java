@@ -22,4 +22,12 @@ public class HocSinhRepository {
     public List<HocSinhModel> getHocSinhByIdshk(String idSoHoKhau) {
         return this.hocSinhBaseRepository.getHocSinhByIdshk(idSoHoKhau);
     }
+
+    public void addHocSinh(HocSinhModel hocSinhModel){
+        this.hocSinhBaseRepository.save(hocSinhModel);
+    }
+
+    public void deleteHocSinh(HocSinhModel hocSinhModel){
+        this.hocSinhBaseRepository.delete(hocSinhModel);
+    }
 }

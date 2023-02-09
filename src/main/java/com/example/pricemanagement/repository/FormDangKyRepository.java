@@ -3,6 +3,7 @@ import com.example.pricemanagement.repository.model.FormDangKyModel;
 import com.example.pricemanagement.repository.baseRepository.FormDangKyBaseRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
@@ -29,6 +30,10 @@ public class FormDangKyRepository {
 
     public void updateFormDangKy(FormDangKyModel formDangKyModel) {
         formDangKyBaseRepository.save(formDangKyModel);
+    }
+
+    public void deleteFormDangKy(Set<FormDangKyModel> formDangKyModel){
+        this.formDangKyBaseRepository.deleteAll(formDangKyModel);
     }
 
     public List<FormDangKyModel> getAcceptedForm(){

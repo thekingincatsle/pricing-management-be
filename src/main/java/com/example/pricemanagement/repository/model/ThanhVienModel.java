@@ -1,5 +1,9 @@
 package com.example.pricemanagement.repository.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -18,6 +22,7 @@ public class ThanhVienModel{
     @JoinColumn(name = "id_so_ho_khau", nullable = false)
     private HoGiaDinhModel hoGiaDinh;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "thanhVien", fetch = FetchType.LAZY)
     private HocSinhModel hocSinh;
 
@@ -77,5 +82,13 @@ public class ThanhVienModel{
 
     public void setHoGiaDinh(HoGiaDinhModel hoGiaDinh) {
         this.hoGiaDinh = hoGiaDinh;
+    }
+
+    public HocSinhModel getHocSinh() {
+        return hocSinh;
+    }
+
+    public void setHocSinh(HocSinhModel hocSinh) {
+        this.hocSinh = hocSinh;
     }
 }

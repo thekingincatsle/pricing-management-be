@@ -2,6 +2,7 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.HoGiaDinhRepository;
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
+import com.example.pricemanagement.repository.model.ThanhVienModel;
 import com.example.pricemanagement.type.accountmessage.AccountMessageFamily;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -9,9 +10,12 @@ import java.util.*;
 @Service
 public class HoGiaDinhService {
     private final HoGiaDinhRepository hoGiaDinhRepository;
+    private final ThanhVienService thanhVienService;
 
-    public HoGiaDinhService(HoGiaDinhRepository hoGiaDinhRepository) {
+
+    public HoGiaDinhService(HoGiaDinhRepository hoGiaDinhRepository, ThanhVienService thanhVienService) {
         this.hoGiaDinhRepository = hoGiaDinhRepository;
+        this.thanhVienService = thanhVienService;
     }
 
     public List<HoGiaDinhModel> getHoGiaDinh(){
@@ -39,5 +43,19 @@ public class HoGiaDinhService {
             }
         }
         return response;
+    }
+
+    public String addHoGiaDinh(HoGiaDinhModel hoGiaDinhModel){
+        this.hoGiaDinhRepository.addHoGiaDinh(hoGiaDinhModel);
+        return "Thêm thành công hộ gia đình " + hoGiaDinhModel.getIdSoHoKhau();
+    }
+
+    public String deleteHoGiaDinh(HoGiaDinhModel hoGiaDinhModel){
+        List<ThanhVienModel> temp = this.thanhVienService.getThanhVienByIdSoHoKhau(hoGiaDinhModel.getIdSoHoKhau());
+        for (ThanhVienModel thanhVienModel : temp) {
+            this.thanhVienService.deleteThanhVien(thanhVienModel);
+        }
+        this.hoGiaDinhRepository.deleteHoGiaDinh(hoGiaDinhModel);
+        return "Xóa thành công hộ gia đình " + hoGiaDinhModel.getIdSoHoKhau();
     }
 }
