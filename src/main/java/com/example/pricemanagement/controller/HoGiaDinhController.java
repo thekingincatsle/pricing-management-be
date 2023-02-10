@@ -1,6 +1,7 @@
 package com.example.pricemanagement.controller;
 
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
+import com.example.pricemanagement.repository.model.XacNhanPhanThuongHocSinhModel;
 import com.example.pricemanagement.service.HoGiaDinhService;
 import com.example.pricemanagement.type.accountmessage.AccountMessageFamily;
 import org.springframework.web.bind.annotation.*;
@@ -33,13 +34,18 @@ public class HoGiaDinhController {
         return this.hoGiaDinhService.login(hoGiaDinhModel);
     }
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public String addHoGiaDinh(@RequestBody HoGiaDinhModel hoGiaDinhModel){
         return this.hoGiaDinhService.addHoGiaDinh(hoGiaDinhModel);
     }
 
-    @DeleteMapping("delete")
+    @DeleteMapping("/delete")
     public String deleteHoGiaDinh(@RequestBody HoGiaDinhModel hoGiaDinhModel){
         return this.hoGiaDinhService.deleteHoGiaDinh(hoGiaDinhModel);
+    }
+
+    @GetMapping("/get-message")
+    public List<String> getMessage(@RequestParam(value = "id") String id){
+        return this.hoGiaDinhService.getMessage(id);
     }
 }
