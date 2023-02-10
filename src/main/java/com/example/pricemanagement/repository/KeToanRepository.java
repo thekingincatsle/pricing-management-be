@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class KeToanRepository {
-    public final KeToanBaseRepository keToanBaseRepository;
+    private final KeToanBaseRepository keToanBaseRepository;
 
     public KeToanRepository(KeToanBaseRepository keToanBaseRepository) {
         this.keToanBaseRepository = keToanBaseRepository;
