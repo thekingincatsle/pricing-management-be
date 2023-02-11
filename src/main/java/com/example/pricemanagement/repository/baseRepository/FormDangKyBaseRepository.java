@@ -19,8 +19,8 @@ public interface FormDangKyBaseRepository extends JpaRepository<FormDangKyModel,
     @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs " +
             "ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh INNER JOIN thanhvien tv " +
             "ON hs.ma_giay_khai_sinh = tv.ma_giay_khai_sinh INNER JOIN hogiadinh hgd " +
-            "ON tv.id_so_ho_khau = hgd.id_so_ho_khau WHERE tv.nam_sinh = :year", nativeQuery = true)
-    List<FormDangKyModel>  getFormByBirthYear(int year);
+            "ON tv.id_so_ho_khau = hgd.id_so_ho_khau WHERE date_part('year', CURRENT_DATE) - tv.nam_sinh = :age", nativeQuery = true)
+    List<FormDangKyModel>  getFormByBirthYear(int age);
 
     @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs " +
             "ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh INNER JOIN thanhvien tv " +
@@ -87,8 +87,8 @@ public interface FormDangKyBaseRepository extends JpaRepository<FormDangKyModel,
     @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs " +
             "ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh INNER JOIN thanhvien tv " +
             "ON hs.ma_giay_khai_sinh = tv.ma_giay_khai_sinh INNER JOIN hogiadinh hgd " +
-            "ON tv.id_so_ho_khau = hgd.id_so_ho_khau WHERE tv.nam_sinh = :year AND f.trang_thai = 'Xác nhận'", nativeQuery = true)
-    List<FormDangKyModel>  getAcceptedFormByBirthYear(int year);
+            "ON tv.id_so_ho_khau = hgd.id_so_ho_khau WHERE date_part('year', CURRENT_DATE) - tv.nam_sinh = :age AND f.trang_thai = 'Xác nhận'", nativeQuery = true)
+    List<FormDangKyModel>  getAcceptedFormByBirthYear(int age);
 
     @Query(value = "SELECT * FROM formdangky f INNER JOIN hocsinh hs " +
             "ON f.ma_giay_khai_sinh = hs.ma_giay_khai_sinh INNER JOIN thanhvien tv " +
