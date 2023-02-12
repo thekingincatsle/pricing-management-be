@@ -2,7 +2,6 @@ package com.example.pricemanagement.service;
 
 import com.example.pricemanagement.repository.CanBoRepository;
 import com.example.pricemanagement.repository.model.CanBoModel;
-import com.example.pricemanagement.type.AdminLoginInformation;
 import com.example.pricemanagement.type.accountmessage.AccountMessageAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,7 @@ public class CanBoService {
         return this.canBoRepository.getCanBoByEmail(email);
     }
 
-    public AccountMessageAdmin login(AdminLoginInformation canBoModel){
+    public AccountMessageAdmin login(CanBoModel canBoModel){
         List<CanBoModel> fetch = getCanBoByEmail(canBoModel.getEmail());
         AccountMessageAdmin response;
         if(fetch.isEmpty()){
