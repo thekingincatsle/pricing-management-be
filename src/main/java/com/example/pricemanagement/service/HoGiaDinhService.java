@@ -71,7 +71,8 @@ public class HoGiaDinhService {
             List<String> response = new ArrayList<>();
             for(XacNhanPhanThuongHocSinhModel p : temp){
                 String message = "Phường đã xác nhận phần thưởng khuyến khích học tập cho cháu " + p.getFormDangKy().getHocSinh().getThanhVien().getTen()
-                        + " với danh hiệu " + p.getFormDangKy().getDanhHieu().getTenDanhHieu() + " với phần thưởng " + p.getPhanThuongHocSinhGioi().getTenPhanThuong();
+                        + " với danh hiệu " + p.getFormDangKy().getDanhHieu().getTenDanhHieu() + " với phần thưởng "
+                        + p.getPhanThuongHocSinhGioi().getSoLuong() + " " + p.getPhanThuongHocSinhGioi().getTenPhanThuong();
                 response.add(message);
             }
             return response;
