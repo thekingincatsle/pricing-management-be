@@ -2,6 +2,8 @@ package com.example.pricemanagement.repository;
 
 import com.example.pricemanagement.repository.model.HoGiaDinhModel;
 import com.example.pricemanagement.repository.baseRepository.HoGiaDinhBaseRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,5 +23,13 @@ public class HoGiaDinhRepository {
 
     public List<HoGiaDinhModel> getById(String id){
         return this.hoGiaDinhBaseRepository.getById(id);
+    }
+
+    public void addHoGiaDinh(HoGiaDinhModel hoGiaDinhModel){
+        this.hoGiaDinhBaseRepository.save(hoGiaDinhModel);
+    }
+
+    public void deleteHoGiaDinh(HoGiaDinhModel hoGiaDinhModel){
+        this.hoGiaDinhBaseRepository.delete(hoGiaDinhModel);
     }
 }

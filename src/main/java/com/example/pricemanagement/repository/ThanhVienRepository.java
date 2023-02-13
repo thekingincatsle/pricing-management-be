@@ -22,4 +22,12 @@ public class ThanhVienRepository {
     public List<ThanhVienModel> getChildren(){
         return thanhVienBaseRepository.getChildren();
     }
+
+    public void addThanhVien(ThanhVienModel thanhVienModel){
+        this.thanhVienBaseRepository.save(thanhVienModel);
+    }
+
+    public void deleteThanhVien(ThanhVienModel thanhVienModel){
+        this.thanhVienBaseRepository.delete(thanhVienModel);
+    }
 }

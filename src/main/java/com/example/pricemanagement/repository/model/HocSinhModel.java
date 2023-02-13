@@ -1,6 +1,8 @@
 package com.example.pricemanagement.repository.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -17,6 +19,7 @@ public class HocSinhModel{
     private ThanhVienModel thanhVien;
     private String truong;
     private String lop;
+    @JsonIgnore
     @OneToMany(mappedBy = "hocSinh")
     private Set<FormDangKyModel> formDangKyModels;
 
@@ -68,5 +71,13 @@ public class HocSinhModel{
 
     public void setLop(String lop) {
         this.lop = lop;
+    }
+
+    public Set<FormDangKyModel> getFormDangKyModels() {
+        return formDangKyModels;
+    }
+
+    public void setFormDangKyModels(Set<FormDangKyModel> formDangKyModels) {
+        this.formDangKyModels = formDangKyModels;
     }
 }

@@ -24,6 +24,9 @@ public class PhanThuongThieuNhiModel {
     @OneToMany(mappedBy = "phanThuongThieuNhi")
     private Set<TraoThuongThieuNhiModel> traoThuongThieuNhis;
 
+    public PhanThuongThieuNhiModel() {
+    }
+
     public PhanThuongThieuNhiModel(Long idPhanThuongThieuNhi, String tenPhanThuong, int soLuong, int nam) {
         this.idPhanThuongThieuNhi = idPhanThuongThieuNhi;
         this.tenPhanThuong = tenPhanThuong;

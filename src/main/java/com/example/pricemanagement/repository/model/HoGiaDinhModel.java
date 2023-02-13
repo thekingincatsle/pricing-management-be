@@ -1,5 +1,7 @@
 package com.example.pricemanagement.repository.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class HoGiaDinhModel implements Serializable {
     private String tenChuHo;
     private String diaChi;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "hoGiaDinh")
     private Set<ThanhVienModel> thanhVienModels;
 
@@ -64,5 +67,13 @@ public class HoGiaDinhModel implements Serializable {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+
+    public Set<ThanhVienModel> getThanhVienModels() {
+        return thanhVienModels;
+    }
+
+    public void setThanhVienModels(Set<ThanhVienModel> thanhVienModels) {
+        this.thanhVienModels = thanhVienModels;
     }
 }

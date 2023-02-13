@@ -22,4 +22,8 @@ public class XacNhanPhanThuongHocSinhRepository {
     public void saveXacNhanPhanThuongHocSinh(XacNhanPhanThuongHocSinhModel xacNhanPhanThuongHocSinhModel){
         this.xacNhanPhanThuongHocSinhBaseRepository.save(xacNhanPhanThuongHocSinhModel);
     }
+
+    public List<XacNhanPhanThuongHocSinhModel> findByIdSHK(String idshk){
+        return this.xacNhanPhanThuongHocSinhBaseRepository.findByIdSHK(idshk);
+    }
 }
